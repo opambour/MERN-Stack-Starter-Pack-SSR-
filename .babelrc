@@ -1,0 +1,35 @@
+{
+    "presets": [
+        [
+            "@babel/preset-env",
+            {
+                "targets": {
+                    "node": "current",
+                    "esmodules": true
+                },
+                "useBuiltIns": "entry"
+            }
+        ],
+        [
+            "@babel/preset-react",
+            {
+                "pragma": "dom",
+                "pragmaFrag": "DomFrag",
+                "throwIfNamespace": false
+            }
+        ],
+        [
+            "@babel/preset-flow"
+        ]
+    ],
+    "plugins": [
+        "@babel/plugin-transform-runtime",
+        "@babel/plugin-syntax-dynamic-import", [
+            "@babel/plugin-proposal-class-properties",
+            {
+                "loose": true
+            }
+        ],
+        "react-hot-loader/babel"
+    ]
+}

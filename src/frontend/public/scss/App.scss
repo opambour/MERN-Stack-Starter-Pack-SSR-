@@ -1,0 +1,101 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('../../public/font/Roboto/Roboto-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('../../public/font/Ubuntu/Ubuntu-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Fauna-One';
+    src: url('../../public/font/Fauna_One/FaunaOne-Regular.ttf') format('truetype');
+}
+
+body {
+    font-family: 'Ubuntu', serif;
+    font-size: 15px;
+    background-color: rgb(240, 239, 235);
+    margin: 0 auto;
+}
+
+code {
+    color: #26a7c7;
+}
+
+::selection {
+    color: #ffffff;
+    background: rgb(236, 28, 80);
+}
+
+// ------------------------------- Mixins
+@mixin row {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+// ----------------------------- End of mixin ----------------------------
+.Active {
+    color: gray !important;
+    cursor: none;
+}
+
+header {
+    @include row;
+    align-content: center;
+    line-height: 30px;
+    padding: 0 40px;
+    background-color: #333333;
+    #brand_name {
+        flex: 1;
+        @include row;
+        margin-top: 15px;
+        font-weight: 700;
+        a {
+            text-decoration: none;
+            color: #fafafa;
+        }
+    }
+    #master_nav {
+        flex: 11;
+        @include row;
+        justify-content: space-between;
+        .Nav-ul {
+            @include row;
+            li {
+                list-style: none;
+                &:not(:first-child) {
+                    margin-left: 30px;
+                }
+                a {
+                    text-decoration: none;
+                    color: #fafafa;
+                    &:hover {
+                        color: gray;
+                    }
+                }
+            }
+        }
+    }
+}
+
+main {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 30px 80px;
+}
+
+footer {
+    @include row;
+    align-content: center;
+    line-height: 30px;
+    padding: 0 40px;
+}
+
+// ----------------------------- Home page
+#button_counter_app {
+    @include row;
+    justify-content: space-between;
+    padding: 0 200px;
+}
